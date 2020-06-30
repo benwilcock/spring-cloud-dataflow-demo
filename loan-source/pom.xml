@@ -10,7 +10,7 @@
     </parent>
     <groupId>com.vmware</groupId>
     <artifactId>loan-source</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>1.0.0</version>
     <name>loansource</name>
     <description>Acts as a source of Loans</description>
 
@@ -54,6 +54,11 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                	<image>
+                		<name>docker.io/benwilcock/${project.artifactId}:${project.version}</name>
+                	</image>
+                </configuration>
             </plugin>
         </plugins>
     </build>
@@ -65,7 +70,7 @@
                 <spring.profile.activated>kafka</spring.profile.activated>
             </properties>
             <activation>
-                <activeByDefault>true</activeByDefault>
+                <activeByDefault>false</activeByDefault>
             </activation>
             <dependencies>
                 <dependency>
@@ -80,7 +85,7 @@
                 <spring.profile.activated>rabbit</spring.profile.activated>
             </properties>
             <activation>
-                <activeByDefault>false</activeByDefault>
+                <activeByDefault>true</activeByDefault>
             </activation>
             <dependencies>
                 <dependency>
