@@ -1,14 +1,11 @@
-package io.pivotal.loansource;
+package com.example.loansource;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
-import org.springframework.messaging.Message;
-import reactor.core.publisher.Flux;
 
-import java.time.Duration;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Random;

@@ -1,4 +1,4 @@
-package io.pivotal.loancheck;
+package com.example.loanprocessor;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

@@ -1,4 +1,4 @@
-package io.pivotal.loancheck;
+package com.example.loanprocessor;
 
 import org.springframework.cloud.stream.annotation.Input;
 import org.springframework.cloud.stream.annotation.Output;

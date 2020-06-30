@@ -1,4 +1,4 @@
-package io.pivotal.loansource;
+package com.example.loansource;
 
 import org.junit.Test;
 
