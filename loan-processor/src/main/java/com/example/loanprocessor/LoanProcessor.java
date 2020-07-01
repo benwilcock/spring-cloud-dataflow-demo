@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 @Component
 public interface LoanProcessor {
 
-  String APPLICATIONS_IN = "output";
+  String APPLICATIONS_IN = "input";
   String APPROVED_OUT = "approved";
   String DECLINED_OUT = "declined";
 

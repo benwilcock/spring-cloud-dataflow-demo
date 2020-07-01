@@ -1,28 +1,29 @@
 package com.example.loanprocessor;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cloud.stream.annotation.EnableBinding;
 import org.springframework.cloud.stream.annotation.StreamListener;
 import org.springframework.messaging.Message;
 import org.springframework.messaging.support.MessageBuilder;
 import org.springframework.stereotype.Component;
 
+@Slf4j
 @Component
-public class LoanChecker {
+@EnableBinding(LoanProcessor.class)
+public class LoanProcessing {
 
-  public static final Logger log = LoggerFactory.getLogger(LoanChecker.class);
   private static final Long MAX_AMOUNT = 10000L;
   private LoanProcessor processor;
 
   @Autowired
-  public LoanChecker(LoanProcessor processor) {
+  public LoanProcessing(LoanProcessor processor) {
     this.processor = processor;
   }
 
   @StreamListener(LoanProcessor.APPLICATIONS_IN)
-  public void checkAndSortLoans(Loan loan) {
-    log.info("{} {} for ${} for {}", loan.getStatus(), loan.getUuid(), loan.getAmount(), loan.getName());
+  public void processLoanApplication(Loan loan) {
+    log.info("Loan application {} from {} for ${} with id {}", loan.getStatus(), loan.getName(), loan.getAmount(), loan.getUuid());
 
     if (loan.getAmount() > MAX_AMOUNT) {
       loan.setStatus(Statuses.DECLINED.name());
@@ -32,7 +33,7 @@ public class LoanChecker {
       processor.approved().send(message(loan));
     }
 
-    log.info("{} {} for ${} for {}", loan.getStatus(), loan.getUuid(), loan.getAmount(), loan.getName());
+    log.info("Loan application {} from {} for ${} with id {}", loan.getStatus(), loan.getName(), loan.getAmount(), loan.getUuid());
 
   }
 
