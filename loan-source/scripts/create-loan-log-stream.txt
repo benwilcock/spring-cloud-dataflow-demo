@@ -1,0 +1,1 @@
+stream create --name loan-log-stream --definition "loan-source | log" --description "Create loan applications and log them."
