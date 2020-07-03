@@ -1,0 +1,1 @@
+stream create --name loan-processing-stream --definition "loan-source || loan-processor || approved: log-app || declined: log-app" --description "Create loan applications and process them."

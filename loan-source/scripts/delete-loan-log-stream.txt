@@ -1,2 +1,0 @@
-stream undeploy --name loan-log-stream
-stream destroy --name loan-log-stream

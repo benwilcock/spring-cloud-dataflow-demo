@@ -1,1 +1,0 @@
-app register --name loan-source --type source --uri docker://benwilcock/loan-source:1.0.0 --force true

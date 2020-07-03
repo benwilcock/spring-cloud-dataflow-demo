@@ -1,0 +1,2 @@
+stream undeploy --name loan-processing-stream
+stream destroy --name loan-processing-stream

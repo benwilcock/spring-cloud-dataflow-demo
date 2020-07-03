@@ -1,1 +1,0 @@
-stream deploy --name loan-log-stream --properties "deployer.loan-source.kubernetes.image-pull-policy=Always"

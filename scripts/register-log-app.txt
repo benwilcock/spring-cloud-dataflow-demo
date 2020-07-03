@@ -1,0 +1,1 @@
+app register --name log-app --type app --uri docker:springcloudstream/log-sink-rabbit:2.1.3.RELEASE --metadata-uri maven://org.springframework.cloud.stream.app:log-sink-rabbit:jar:metadata:2.1.3.RELEASE --force true

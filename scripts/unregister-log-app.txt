@@ -1,0 +1,1 @@
+app unregister --name log-app --type app

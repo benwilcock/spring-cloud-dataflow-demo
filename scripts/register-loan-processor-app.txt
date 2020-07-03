@@ -1,0 +1,1 @@
+app register --name loan-processor --type app --uri docker://benwilcock/loan-processor:1.0.0 --force true

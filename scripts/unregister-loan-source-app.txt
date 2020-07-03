@@ -1,0 +1,1 @@
+app unregister --name loan-source --type app
