@@ -1,11 +1,10 @@
 package com.example.loansource;
 
-
 import java.util.Objects;
 
 
 /**
- * This class defines a loan. It is associated with an applicant, has an amount, and a status.
+ * This class defines a Loan. It is associated with an applicant, has an amount, and a status.
  */
 public class Loan {
 
