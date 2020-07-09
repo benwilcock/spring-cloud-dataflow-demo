@@ -8,12 +8,12 @@ This demo code shows how to construct a stream in [Spring Cloud Data Flow][dataf
 ### How it works:
 
 1. The `loan-source` and `loan-processor` applications are compiled, packaged, and containerized by the [Spring Boot][boot] Maven plugin. 
-2. The containers are then pushed to [Docker Hub][hub] where they are publicly accessible.
-3. Scripts in the `scripts` folder then deploy the stream using the Spring Cloud Data Flow CLI.
-3.1 The `register-apps.sh` script registers the applications.
-3.2 The `build-flow.sh` script creates (defines) and deploys the stream to dataflow using the properties provided.
-4. Spring Cloud Data Flow takes care of installing the applications onto your chosen infrastructure (K8s, CloudFoundry, etc.)
-4.1 During this process, Spring Cloud Data Flow will set properties that allow the applications to adapt to the infrastructure given (IP's, ports, etc.)
+1. The containers are then pushed to [Docker Hub][hub] where they are publicly accessible.
+1. Scripts in the `scripts` folder then deploy the stream using the Spring Cloud Data Flow CLI.
+..* The `register-apps.sh` script registers the applications.
+..* The `build-flow.sh` script creates (defines) and deploys the stream to dataflow using the properties provided.
+1. Spring Cloud Data Flow takes care of installing the applications onto your chosen infrastructure (K8s, CloudFoundry, etc.)
+..* During this process, Spring Cloud Data Flow will set properties that allow the applications to adapt to the infrastructure given (IP's, ports, etc.)
 
 Once deployed, take a look at the logs emitted from the `loan-source`, `loan-processor`, and `log-sink` components for their output.
 
