@@ -13,9 +13,9 @@ Spring Cloud Data Flow is important because it takes care of installing, startin
 
 ### How it works:
 
-The `loan-source` and `loan-processor` applications are compiled, packaged, and containerized by the [Spring Boot][boot] Maven plugin. Once built (with `spring-boot:build-image`) the containers are then pushed to [Docker Hub][hub] where they are then publicly accessible.
+The `loan-source` and `loan-processor` applications are compiled, packaged, and containerized by the [Spring Boot][boot] Maven plugin. Once built (with `spring-boot:build-image`) the containers are then pushed to [Docker Hub][hub] where they are then publicly accessible. The `log-sink` application is provided by Spring Cloud Data Flow as one of it's ready to use components (although not installed by default).
 
-Scripts in the `scripts` folder deploy the stream using the Spring Cloud Data Flow CLI. The `register-apps.sh` script registers the applications. The `build-flow.sh` script defines and deploys the loan processing stream to dataflow using the properties provided in a text file.
+Scripts in the `scripts` folder deploy the stream using the Spring Cloud Data Flow CLI. The `register-apps.sh` script registers the applications. The `build-flow.sh` script defines and deploys the loan processing stream to dataflow using the properties provided in a text file. The flow defined in the script echo's the [diagram][diagram] above. Note that each of the applications is registered using the `app` type and deployed by Data Flow in parrallel (`||`). This is because the `loan-processor` uses a _single-input_ with _multiple-outputs_ approach.
 
 During the deployment of the stream, Spring Cloud Data Flow takes care of installing the applications onto the infrastructure (K8s, CloudFoundry, etc.). Spring Cloud Data Flow will set the various properties that allow the applications to adapt to the infrastructure provided at runtime (IP's, ports, etc.)
 
