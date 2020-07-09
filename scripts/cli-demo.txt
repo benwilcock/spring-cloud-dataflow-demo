@@ -1,0 +1,13 @@
+help
+
+help app
+
+app list
+
+app register --name loan-source --type source --uri docker://benwilcock/loan-source:1.0.0
+
+stream create --name loan-log-stream --definition “”loan-source | log”
+
+stream deploy --name loan-log-stream --properties "deployer.loan-source.kubernetes.entry-point-style=shell,deployer.loan-source.kubernetes.image-pull-policy=Always"
+
+script --file deploy-loan-log-stream.txt
