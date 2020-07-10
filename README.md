@@ -1,5 +1,5 @@
-# Spring Cloud Data Flow
-## Bank Loan Stream Demo
+# Spring Cloud Data Flow Demo
+## Bank Loan Data Processing Stream 
 
 This demo code shows how to construct a streaming application in [Spring Cloud Data Flow][dataflow] using Java applications written in [Spring Cloud Stream][stream]. 
 
